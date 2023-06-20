@@ -7,13 +7,21 @@ class DiceRoller extends StatefulWidget {
   const DiceRoller({super.key});
 
   @override
-  State<DiceRoller> createState() => _DiceRollerState();
+  State<DiceRoller> createState() {
+    return _DiceRollerState();
+  }
 }
 
 class _DiceRollerState extends State<DiceRoller> {
   var imageOfDice = 'assets/images/dice-1.png';
   var currentIndex = 1;
   late Random random;
+  // here this is the method we run everytimg we have to change the dice image
+  // the setState is inbuult here we keep the changes like the variable which would change and let the flutter know
+  // which is going to change
+  // also, as this is stateful widget therefore only this will refresh
+  // and not other widgets present in other classes that will improve the performance
+
   void rollDice() {
     setState(() {
       currentIndex = random.nextInt(6) + 1;
