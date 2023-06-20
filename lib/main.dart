@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_flutter_project/styles/text_styles_and_colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,6 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Hello World');
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: GradientContainer(
+          const Color.fromARGB(255, 90, 1, 31),
+          const Color.fromARGB(255, 224, 216, 140),
+        ));
   }
 }
